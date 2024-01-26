@@ -34,6 +34,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "hungry-cowk-59"
+          project: "hungry-cow-59"
           entrypoint: "main.ts" # 📝 Update the entrypoint if necessary
           root: "api" # 📝 Update the root if necessary
