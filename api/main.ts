@@ -31,12 +31,11 @@ app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-// app.addEventListener('listen', ({ hostname, port, secure }) => {
-//   const protocol = secure ? 'https' : 'http';
-//   const url = `${protocol}://${hostname ?? 'localhost'}:${port}`;
-//   console.log(`Listening on: ${url}`);
-// });
-// app.addEventListener('error', (evt) => {
-//   console.error(evt.error);
-// });
+app.use(async (context) => {
+  await send(context, context.request.url.pathname, {
+    root: `${Deno.cwd()}/dist`,
+    index: "index.html",
+  });
+});
+
 await app.listen({ port: 8000 });
