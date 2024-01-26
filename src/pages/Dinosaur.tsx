@@ -6,7 +6,7 @@ const Dinosaur = () => {
   const [dino, setDino] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/${dinosaur}`)
+    fetch(`https://hungry-cow-59-qmaa2d1r0gkr.deno.dev/api/${dinosaur}`)
       .then(async (response) => await response.json())
       .then((json) => setDino(json));
   }, []);
