@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "react": "https://esm.sh/stable/react@18.2.0?dev",
+    "react/": "https://esm.sh/stable/react@18.2.0&dev/",
+    "react-dom": "https://esm.sh/stable/react-dom@18.2.0?external=react&dev",
+    "react-dom/": "https://esm.sh/stable/react-dom@18.2.0&external=react&dev/",
+    "react-router-dom": "https://esm.sh/v122/react-router-dom@6.3.0?external=react",
+    "react-router-dom/server": "https://esm.sh/v122/react-router-dom@6.3.0/server?external=react"
+  }
+}
