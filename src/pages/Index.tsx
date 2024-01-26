@@ -5,7 +5,7 @@ const Index = () => {
   const [dinos, setDinos] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api')
+    fetch('https://hungry-cow-59-qmaa2d1r0gkr.deno.dev/api')
       .then(async (response) => await response.json())
       .then((json) => setDinos(json));
   }, []);
