@@ -29,12 +29,11 @@ jobs:
           node-version: lts/*
 
       - name: Build step
-        run: "deno run -A --node-modules-dir npm:vite build"
-        # run: "npm install && npm run build" # 📝 Update the build command(s) if necessary
+        run: "npm install && npm run build" # 📝 Update the build command(s) if necessary
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "afraid-shark-45"
-          entrypoint: "main.tsx" # 📝 Update the entrypoint if necessary
+          entrypoint: "src/main.tsx" # 📝 Update the entrypoint if necessary
           root: "/" # 📝 Update the root if necessary
