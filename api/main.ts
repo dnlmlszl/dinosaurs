@@ -31,11 +31,12 @@ app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-app.use(async (context) => {
-  await send(context, context.request.url.pathname, {
-    root: `${Deno.cwd()}/dist`,
-    index: "index.html",
-  });
+app.use(async (context, next) => {
+  if (context.request.method === "GET" && context.request.url.pathname === "/") {
+    await send(context, "index.html", { root: `${Deno.cwd()}/dist` });
+  } else {
+    await next();
+  }
 });
 
 await app.listen({ port: 8000 });
