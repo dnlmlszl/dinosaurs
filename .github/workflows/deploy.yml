@@ -35,5 +35,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "hungry-cow-59"
-          entrypoint: "index.html" # 📝 Update the entrypoint if necessary
-          root: "dist" # 📝 Update the root if necessary
+          entrypoint: "main.ts" # 📝 Update the entrypoint if necessary
+          root: "api" # 📝 Update the root if necessary
