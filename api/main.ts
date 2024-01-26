@@ -31,11 +31,13 @@ app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-app.use(async (context, next) => {
-  if (context.request.method === "GET" && context.request.url.pathname === "/") {
-    await send(context, "index.html", { root: `${Deno.cwd()}/dist` });
-  } else {
-    await next();
+app.use(async (context) => {
+  const path = context.request.url.pathname;
+  if (!path.startsWith("/api")) {
+    await send(context, context.request.url.pathname, {
+      root: `${Deno.cwd()}/dist`,
+      index: "index.html",
+    });
   }
 });
 
